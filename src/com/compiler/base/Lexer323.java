@@ -124,15 +124,17 @@ public class Lexer323 {
 	}
 
 	private static boolean checkKeyword(String words) {
-		System.out.println(Keywords.values() + words);
 		return contains(words);
 	}
 
 	/*
 	 */
 	public static boolean contains(String word) {
-		if (word.equals("integer")) {
-			return true;
+		for (Keywords key : Keywords.values()) {
+			System.out.println(key + word);
+			if (word.equalsIgnoreCase(key.toString())) {
+				return true;
+			}
 		}
 		return false;
 	}
